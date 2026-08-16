@@ -13,17 +13,17 @@ const __filename = fileURLToPath(import.meta.url);
 
 //───────────────< GLOBAL SETTINGS >───────────────\\
 
-global.owner = ["6282113821188"]; // ['628','628'] 2 owner atau lebih
-global.author = "Nazedev";
-global.botname = "Hitori Bot";
+global.owner = ["6285788390394"]; // ['628','628'] 2 owner atau lebih
+global.author = "Scarlatte";
+global.botname = "Columbina Bot";
 global.packname = "Bot WhatsApp";
 global.timezone = "Asia/Jakarta"; // Ganti pakai command .settimezone
-global.locale = "en"; // Ganti pakai command .setlocale
+global.locale = "id"; // Ganti pakai command .setlocale
 global.listprefix = ["+", "!", "."];
 global.defaultAdminKey = crypto.randomBytes(32).toString("hex");
 
 global.pairing_code = true;
-global.number_bot = ""; // Kalo pake panel bisa masukin nomer di sini, jika belum ambil session. Format : '628xx'
+global.number_bot = "62887437195264"; // Kalo pake panel bisa masukin nomer di sini, jika belum ambil session. Format : '628xx'
 
 global.dns_use = "custom"; // custom / default
 global.database = {
@@ -44,10 +44,10 @@ global.fake = {
 };
 
 global.my = {
-	yt: "https://youtube.com/c/Nazedev",
-	gh: "https://github.com/nazedev",
-	gc: "https://chat.whatsapp.com/CPultzDlGoCI3OUvViyZtm",
-	ch: "120363250409960161@newsletter",
+	yt: "-",
+	gh: "-",
+	gc: "-",
+	ch: "-",
 };
 
 global.limit = {
@@ -86,8 +86,8 @@ global.APIs = {
 	neosantara: "https://api.neosantara.xyz/v1",
 };
 global.APIKeys = {
-	"https://api.naze.biz.id": "YOUR_API_KEY",
-	"https://api.neosantara.xyz/v1": "API_KEY_NEOSANTARA_AI",
+	"https://api.naze.biz.id": "nz-203c6039de",
+	"https://api.neosantara.xyz/v1": "nsk_18176f07f3ef415699e57ff7785a547b",
 };
 
 // Lainnya
