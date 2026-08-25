@@ -87,7 +87,7 @@ async function GroupUpdate(sock, m, store) {
 		if (sock.public && global.db?.groups?.[m.chat]?.setinfo && messages[type]) {
 			await sock.sendMessage(
 				m.chat,
-				{ text: `${admin} ${messages[type]}`, mentions: [m.sender, ...((normalizedTarget?.id || normalizedTarget)?.includes("@") ? [`${normalizedTarget.id || normalizedTarget}`] : [])].filter(Boolean) },
+				{ text: `${admin} ${messages[type]}`, mentions: [m.sender, ...(String(normalizedTarget?.id || normalizedTarget).includes("@") ? [`${normalizedTarget.id || normalizedTarget}`] : [])].filter(Boolean) },
 				{ ephemeralExpiration: m.expiration || m?.metadata?.ephemeralDuration || store?.messages[m.chat]?.array?.slice(-1)[0]?.metadata?.ephemeralDuration || 0 },
 			);
 		}
