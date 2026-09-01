@@ -23,7 +23,7 @@ global.listprefix = ["+", "!", "."];
 global.defaultAdminKey = crypto.randomBytes(32).toString("hex");
 
 global.pairing_code = true;
-global.number_bot = "62887437195264"; // Kalo pake panel bisa masukin nomer di sini, jika belum ambil session. Format : '628xx'
+global.number_bot = "6285788390394"; // Kalo pake panel bisa masukin nomer di sini, jika belum ambil session. Format : '628xx'
 
 global.dns_use = "custom"; // custom / default
 global.database = {
