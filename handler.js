@@ -3582,7 +3582,7 @@ Select Bot Settings:
 						setLimit(m, db);
 					} catch (e) {
 						try {
-							let res = await fetchApi("/create/brat3", { text: queryText }, { stream: true });
+							let res = await fetchApi("/api/v1/create/brat", { text: queryText }, { stream: true });
 							await sock.sendAsSticker(m.chat, res, m);
 							setLimit(m, db);
 						} catch (e) {
