@@ -13,13 +13,13 @@ const __filename = fileURLToPath(import.meta.url);
 
 //───────────────< GLOBAL SETTINGS >───────────────\\
 
-global.owner = ["6282113821188"]; // ['628','628'] 2 owner atau lebih
-global.author = "Nazedev";
-global.botname = "Hitori Bot";
+global.owner = ["6285788390394"]; // ['628','628'] 2 owner atau lebih
+global.author = "Scarlatte";
+global.botname = "☁️Columbina Bot☁️";
 global.packname = "Bot WhatsApp";
 global.timezone = "Asia/Jakarta"; // Ganti pakai command .settimezone
-global.locale = "en"; // Ganti pakai command .setlocale
-global.listprefix = ["+", "!", "."];
+global.locale = "id"; // Ganti pakai command .setlocale
+global.listprefix = ["/", "!", "."];
 global.defaultAdminKey = crypto.randomBytes(32).toString("hex");
 
 global.pairing_code = true;
@@ -44,16 +44,16 @@ global.fake = {
 };
 
 global.my = {
-	yt: "https://youtube.com/c/Nazedev",
-	gh: "https://github.com/nazedev",
-	gc: "https://chat.whatsapp.com/CPultzDlGoCI3OUvViyZtm",
-	ch: "120363250409960161@newsletter",
+	yt: "-",
+	gh: "https://github.com/Scarlatteria",
+	gc: "-",
+	ch: "-",
 };
 
 global.limit = {
 	free: 20,
-	premium: 999,
-	vip: 900,
+	premium: 500,
+	vip: 1000,
 };
 
 global.money = {
@@ -86,8 +86,8 @@ global.APIs = {
 	neosantara: "https://api.neosantara.xyz/v1",
 };
 global.APIKeys = {
-	"https://api.naze.biz.id": "YOUR_API_KEY",
-	"https://api.neosantara.xyz/v1": "API_KEY_NEOSANTARA_AI",
+	"https://api.naze.biz.id": "nz-203c6039de",
+	"https://api.neosantara.xyz/v1": "nsk_1cfbf75696ce4383bd1bf9ca2b1d2c94",
 };
 
 // Lainnya
