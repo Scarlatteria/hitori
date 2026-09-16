@@ -23,14 +23,14 @@ global.listprefix = ["/", "!", "."];
 global.defaultAdminKey = crypto.randomBytes(32).toString("hex");
 
 global.pairing_code = true;
-global.number_bot = "62887437195264"; // Kalo pake panel bisa masukin nomer di sini, jika belum ambil session. Format : '628xx'
+global.number_bot = "6285788390394"; // Kalo pake panel bisa masukin nomer di sini, jika belum ambil session. Format : '628xx'
 
 global.dns_use = "custom"; // custom / default
 global.database = {
 	path: "nazedev", // url mongodb / mysql / postgres / folder name local session 'nazedev'
 	options: {
-		store: true, // jika true ikut path yang diatas. jika false, otomatis local. jika { path: 'url_or_name.json' } menjadi terpisah
-		database: true, // jika true ikut path yang diatas. jika false, otomatis local. jika { path: 'url_or_name.json' } menjadi terpisah
+		store: false, // jika true ikut path yang diatas. jika false, otomatis local. jika { path: 'url_or_name.json' } menjadi terpisah
+		database: false, // jika true ikut path yang diatas. jika false, otomatis local. jika { path: 'url_or_name.json' } menjadi terpisah
 	},
 };
 
