@@ -29,8 +29,8 @@ global.dns_use = "custom"; // custom / default
 global.database = {
 	path: "nazedev", // url mongodb / mysql / postgres / folder name local session 'nazedev'
 	options: {
-		store: false, // jika true ikut path yang diatas. jika false, otomatis local. jika { path: 'url_or_name.json' } menjadi terpisah
-		database: false, // jika true ikut path yang diatas. jika false, otomatis local. jika { path: 'url_or_name.json' } menjadi terpisah
+		store: true, // jika true ikut path yang diatas. jika false, otomatis local. jika { path: 'url_or_name.json' } menjadi terpisah
+		database: true, // jika true ikut path yang diatas. jika false, otomatis local. jika { path: 'url_or_name.json' } menjadi terpisah
 	},
 };
 
