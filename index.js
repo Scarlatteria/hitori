@@ -155,6 +155,23 @@ const getPath = (configOption, defaultLocal) => {
 	return isUrl ? mainPath : path.join(mainPath, defaultLocal);
 };
 const sessionPath = mainPath;
+
+// Remove only the contents of a directory, never the directory itself.
+// The session folder may be a mounted volume, which cannot be removed (EBUSY).
+const clearDirectoryContents = (dir) => {
+	try {
+		if (!fs.existsSync(dir)) return;
+		for (const entry of fs.readdirSync(dir)) {
+			try {
+				fs.rmSync(path.join(dir, entry), { recursive: true, force: true });
+			} catch (err) {
+				console.log(chalk.yellow(`[WARNING] Failed to remove ${path.join(dir, entry)}: ${err.message}`));
+			}
+		}
+	} catch (err) {
+		console.log(chalk.yellow(`[WARNING] Failed to clear ${dir}: ${err.message}`));
+	}
+};
 const storePath = getPath(options.store, "baileys_store.json");
 const dbPath = getPath(options.database, "database.json");
 
@@ -310,7 +327,7 @@ async function startNazeBot() {
 	const level = pino({ level: "silent" });
 	const { version } = await fetchLatestWaWebVersion();
 	if (pairingCode && !phoneNumber && !fs.existsSync("./nazedev/creds.json")) {
-		fs.rmSync("./nazedev", { recursive: true, force: true });
+		clearDirectoryContents("./nazedev");
 		async function getPhoneNumber() {
 			phoneNumber = global.number_bot ? global.number_bot : process.env.BOT_NUMBER || (await question("Please type your WhatsApp number : "));
 			phoneNumber = phoneNumber.replace(/[^0-9]/g, "");
@@ -479,15 +496,15 @@ async function startNazeBot() {
 				console.log("Close current Session first...");
 			} else if (reason === DisconnectReason.loggedOut) {
 				console.log("Scan again and Run...");
-				if (!isUrl) fs.rmSync(sessionPath, { recursive: true, force: true });
+				if (!isUrl) clearDirectoryContents(sessionPath);
 				process.exit(0);
 			} else if (reason === DisconnectReason.forbidden) {
 				console.log("Connection Failure, Scan again and Run...");
-				if (!isUrl) fs.rmSync(sessionPath, { recursive: true, force: true });
+				if (!isUrl) clearDirectoryContents(sessionPath);
 				process.exit(1);
 			} else if (reason === DisconnectReason.multideviceMismatch) {
 				console.log("Scan again...");
-				if (!isUrl) fs.rmSync(sessionPath, { recursive: true, force: true });
+				if (!isUrl) clearDirectoryContents(sessionPath);
 				process.exit(0);
 			} else {
 				console.log(chalk.yellow(`[DISCONNECT] Unexpected disconnect (code: ${reason || "unknown"}), attempting auto-recovery...`));
