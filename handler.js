@@ -145,34 +145,34 @@ const sock = async (sock, m, store) => {
 
 		let body =
 			(m.type === "conversation"
-				? m.message.conversation
+				? m.message?.conversation
 				: m.type == "imageMessage"
-					? m.message.imageMessage.caption
+					? m.message?.imageMessage?.caption
 					: m.type == "videoMessage"
-						? m.message.videoMessage.caption
+						? m.message?.videoMessage?.caption
 						: m.type == "extendedTextMessage"
-							? m.message.extendedTextMessage.text
+							? m.message?.extendedTextMessage?.text
 							: m.type == "reactionMessage"
-								? m.message.reactionMessage.text
+								? m.message?.reactionMessage?.text
 								: m.type == "buttonsResponseMessage"
-									? m.message.buttonsResponseMessage.selectedButtonId
+									? m.message?.buttonsResponseMessage?.selectedButtonId
 									: m.type == "listResponseMessage"
-										? m.message.listResponseMessage.singleSelectReply.selectedRowId
+										? m.message?.listResponseMessage?.singleSelectReply?.selectedRowId
 										: m.type == "templateButtonReplyMessage"
-											? m.message.templateButtonReplyMessage.selectedId
+											? m.message?.templateButtonReplyMessage?.selectedId
 											: m.type == "interactiveResponseMessage" || m.msg?.nativeFlowResponseMessage || m.message?.interactiveResponseMessage?.nativeFlowResponseMessage
 												? nativeFlowId || m.body || ""
 												: m.type == "messageContextInfo"
-													? m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || ""
+													? m.message?.buttonsResponseMessage?.selectedButtonId || m.message?.listResponseMessage?.singleSelectReply?.selectedRowId || ""
 													: m.type == "editedMessage"
-														? m.message.editedMessage?.message?.protocolMessage?.editedMessage?.extendedTextMessage?.text || m.message.editedMessage?.message?.protocolMessage?.editedMessage?.conversation || ""
+														? m.message?.editedMessage?.message?.protocolMessage?.editedMessage?.extendedTextMessage?.text || m.message?.editedMessage?.message?.protocolMessage?.editedMessage?.conversation || ""
 														: m.type == "protocolMessage"
-															? m.message.protocolMessage?.editedMessage?.extendedTextMessage?.text ||
-																m.message.protocolMessage?.editedMessage?.conversation ||
-																m.message.protocolMessage?.editedMessage?.imageMessage?.caption ||
-																m.message.protocolMessage?.editedMessage?.videoMessage?.caption ||
-																""
-															: "") ||
+							? m.message?.protocolMessage?.editedMessage?.extendedTextMessage?.text ||
+								m.message?.protocolMessage?.editedMessage?.conversation ||
+								m.message?.protocolMessage?.editedMessage?.imageMessage?.caption ||
+								m.message?.protocolMessage?.editedMessage?.videoMessage?.caption ||
+								""
+							: "") ||
 			m.body ||
 			"";
 
